@@ -1,9 +1,11 @@
-package com.budgetappbackend
+package com.budgetappbackend.LineItem
 
+import org.springframework.data.relational.core.mapping.Table
 import java.util.*
 import javax.persistence.*
 
 @Entity
+@Table("line_item")
 class LineItem (
     @Column(name = "item_name")
     val itemName: String,
@@ -12,5 +14,5 @@ class LineItem (
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val id: UUID?
 ) {
-    protected constructor() : this("",0.0f,null)
+    constructor() : this("",0.0f,null)
 }
