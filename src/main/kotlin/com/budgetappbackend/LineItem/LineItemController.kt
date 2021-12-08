@@ -15,7 +15,7 @@ class LineItemController(private val lineItemService: LineItemService){
 
     @CrossOrigin
     @PutMapping("/lineItem/{id}")
-    fun putLineItem(@PathVariable("id") lineItemId: UUID, @RequestBody lineItem: LineItem): LineItem {
+    fun putLineItem(@PathVariable("id") lineItemId: UUID, lineItem: LineItem): LineItem {
         return lineItemService.updateLineItem(lineItemId, lineItem)
     }
 

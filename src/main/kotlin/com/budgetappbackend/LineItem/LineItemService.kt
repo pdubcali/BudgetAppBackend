@@ -1,12 +1,15 @@
 package com.budgetappbackend.LineItem
 
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
 import java.util.*
 
 
 @Service
-class LineItemService (private val lineItemRepository: LineItemRepository){
+class LineItemService (){
+    @Autowired
+    lateinit var lineItemRepository: LineItemRepository
 
     fun createLineItem(lineItem: LineItem): LineItem = lineItemRepository.save(lineItem)
 
