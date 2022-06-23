@@ -14,4 +14,6 @@ class LineItem (
     val itemName: String,
     @Column(name = "item_amount")
     val itemAmount: Float,
+    @Column(name = "date")
+    val date: Date?
 )

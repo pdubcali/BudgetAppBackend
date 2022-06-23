@@ -19,13 +19,13 @@ class LineItemController(private val lineItemService: LineItemService){
         return lineItemService.updateLineItem(lineItemId, lineItem)
     }
 
-//    @PutMapping("/lineItem/{id}")
-//    fun put(@PathVariable id: UUID, @RequestBody lineItem: LineItem) {
-//        if(repository.findById(id) != null){
-//
-//        }
-//    }
-//
+    @CrossOrigin
+    @GetMapping("/lineItem")
+    fun findAll(): List<LineItem> {
+        val allLineItems: List<LineItem> = lineItemService.findAllLineItems()
+        return allLineItems
+    }
+
 //    @DeleteMapping("/lineItem/{id}")
 //    fun delete(@PathVariable id: UUID) {
 //        repository.delete(id)

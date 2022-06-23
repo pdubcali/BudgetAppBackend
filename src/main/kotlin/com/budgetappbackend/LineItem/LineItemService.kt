@@ -19,9 +19,13 @@ class LineItemService (){
                 LineItem(
                     id = lineItem.id,
                     itemName = lineItem.itemName,
-                    itemAmount = lineItem.itemAmount
+                    itemAmount = lineItem.itemAmount,
+                    date = lineItem.date
                 )
             )
         }else throw LineItemNotFoundException(HttpStatus.NOT_FOUND, "No matching line item")
     }
+
+    fun findAllLineItems() = lineItemRepository.findAll()
+
 }
